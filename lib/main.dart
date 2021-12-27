@@ -50,9 +50,21 @@ class _MyHomePageState extends State<MyHomePage> {
               physics: const BouncingScrollPhysics(),
               slivers: [
                 SliverAppBar(
-                  title: Text(
-                    'Jike Book During 2021',
-                    style: TextStyle(color: HexColor('#FFE40F'), fontWeight: FontWeight.bold),
+                  title: ShaderMask(
+                    shaderCallback: (bounds) {
+                      return LinearGradient(
+                        colors: [
+                          HexColor('#2D963D'),
+                          HexColor('#FFE40F'),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ).createShader(Offset.zero & bounds.size);
+                    },
+                    child: const Text(
+                      "Jike Book During 2021",
+                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   centerTitle: false,
                   backgroundColor: Colors.white,
@@ -108,7 +120,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   SnackBar(
                     content: Text('《${book.title}》在 2021 年读书会圈子中，有 ${book.count} 人在读。'),
                     action: SnackBarAction(
-                      label: "查看",
+                      label: '查看',
                       onPressed: onPress,
                     ),
                   ),
