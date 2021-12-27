@@ -92,8 +92,15 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: onPress,
         child: ListTile(
           leading: Image.asset(image, fit: BoxFit.cover),
-          title: Text(book.title),
-          subtitle: Text(book.abstract),
+          title: Text(
+            book.title,
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          subtitle: Text(
+            book.abstract,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+          ),
           trailing: TextButton(
               style: TextButton.styleFrom(primary: HexColor('#2D963D')),
               onPressed: () {
