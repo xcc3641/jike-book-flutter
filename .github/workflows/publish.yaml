@@ -1,8 +1,8 @@
 name: Flutter Web
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 jobs:
   build:
     name: Build Web
@@ -17,7 +17,7 @@ jobs:
           channel: 'stable'
       - run: flutter config --enable-web
       - run: flutter pub get
-      - run: flutter build web --release
+      - run: flutter build web --release --base-href /jike-book-flutter/
       - run: |
           cd build/web
           git init
