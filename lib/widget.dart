@@ -20,7 +20,7 @@ class BookAppBar extends StatelessWidget {
           ).createShader(Offset.zero & bounds.size);
         },
         child: const Text(
-          "Jike Book During 2021",
+          "Jike Book in 2021",
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
       ),

@@ -77,7 +77,7 @@ class _JikeBookPageState extends State<JikeBookPage> {
                         return Container(
                           alignment: Alignment.center,
                           child: const Text(
-                            "- 2021 Jike Book -",
+                            "- Jike Book in 2021 -",
                             style: TextStyle(
                               color: Colors.grey,
                             ),
