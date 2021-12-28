@@ -24,7 +24,7 @@ jobs:
           git config --global user.email hugo3641@gmail.com
           git config --global user.name hugo
           git status
-          git remote add origin https://${{secrets.ACTION_TOKEN}}@github.com/xcc3641/jike-book-flutter.git
+          git remote add origin https://${{secrets.TOKEN}}@github.com/xcc3641/jike-book-flutter.git
           git checkout -b gh-pages
           git add --all
           git commit -m "update"
