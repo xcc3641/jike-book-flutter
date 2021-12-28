@@ -68,7 +68,7 @@ class _JikeBookPageState extends State<JikeBookPage> {
                       final book = books[index];
                       return _bookCell(book);
                     },
-                    childCount: 10,
+                    childCount: books.length,
                   ),
                 ),
                 SliverFixedExtentList(
