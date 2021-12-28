@@ -13,7 +13,9 @@
 #  
 - 本项目是 [我](http://m.okjike.com/users/b24dfead-7e5a-4fc9-aa8b-c8114832bd36?ref=PROFILE_CARD&utm_source=user_card) 个人尝试使用 Flutter 完成 Web 开发流程的一个小项目。
 
-- 灵感来源于我 11 月上网看到的有人做了 [r/books](https://www.reddit.com/r/books/) 的年终统计，但我现在找不到它了，如果有人发现，可以提交 issue 我补充上来。
+- 灵感来源于:
+    - [redditreads](https://www.redditreads.com/)
+    - [hacker-recommended-books](https://hacker-recommended-books.vercel.app/category/0/all-time/page/0/0)
 
 - 开源地址为：[jike-book-flutter](https://github.com/xcc3641/jike-book-flutter)
 
