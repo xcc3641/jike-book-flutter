@@ -4,7 +4,7 @@
 
 - 我列出了排名前 30 的书，每本书都可以点击跳转到对应的豆瓣页面。
 
-- 私心安利 [@搞即建](http://m.okjike.com/users/WalleMax?ref=PROFILE_CARD&utm_source=user_card) 的一个豆瓣找书的效率小工具：[weReaDou](https://m.okjike.com/originalPosts/61c167fa4abae20010973e4c?s=ewoidSI6ICI1N2E0MTBlYTljZTIzNDEzMDA5MmViOTkiCn0=)。
+- 私心安利 [@搞即建的](http://m.okjike.com/users/WalleMax?ref=PROFILE_CARD&utm_source=user_card) 一个豆瓣找书的效率小工具：[weReaDou](https://m.okjike.com/originalPosts/61c167fa4abae20010973e4c?s=ewoidSI6ICI1N2E0MTBlYTljZTIzNDEzMDA5MmViOTkiCn0=)。
 
 #  
 - 感谢 2021 年在读书会分享的即友。
