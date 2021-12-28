@@ -93,7 +93,6 @@ class _JikeBookPageState extends State<JikeBookPage> {
   }
 
   Widget _bookCell(Book book) {
-    final image = 'images/${book.title}.jpg';
     var count = '${book.count}';
     if (count.length == 2) {
       count = '  $count';
@@ -106,7 +105,7 @@ class _JikeBookPageState extends State<JikeBookPage> {
         style: TextButton.styleFrom(primary: HexColor(book.colors[0])),
         onPressed: onPress,
         child: ListTile(
-          leading: Image.asset(image, fit: BoxFit.cover),
+          leading: Image.network(book.image),
           title: Text(
             book.title,
             style: const TextStyle(fontWeight: FontWeight.bold),
