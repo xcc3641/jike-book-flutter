@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:jike_book_flutter/widget.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {
@@ -26,9 +25,6 @@ class _AboutPageState extends State<AboutPage> {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          BookAppBar(
-            forceElevated: true,
-          ),
           SliverFillViewport(
             delegate: SliverChildBuilderDelegate(
               (_, index) {
