@@ -1,11 +1,11 @@
 {
-    "name": "jike_book_flutter",
-    "short_name": "jike_book_flutter",
+    "name": "即刻读书会",
+    "short_name": "读书会",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "即刻读书会",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
