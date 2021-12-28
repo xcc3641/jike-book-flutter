@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:jike_book_flutter/about_page.dart';
 import 'package:jike_book_flutter/book.dart';
 import 'package:jike_book_flutter/service.dart';
+import 'package:jike_book_flutter/widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -14,19 +16,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: MyHomePage(),
+      home: JikeBookPage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class JikeBookPage extends StatefulWidget {
+  const JikeBookPage({Key? key}) : super(key: key);
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<JikeBookPage> createState() => _JikeBookPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _JikeBookPageState extends State<JikeBookPage> {
   final Service service = Service();
   final List<Book> books = [];
 
@@ -46,31 +48,19 @@ class _MyHomePageState extends State<MyHomePage> {
     return books.isEmpty
         ? const Center(child: CircularProgressIndicator())
         : Scaffold(
+            floatingActionButton: FloatingActionButton(
+              mini: true,
+              child: const Icon(Icons.keyboard_arrow_left),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return const AboutPage();
+                }));
+              },
+            ),
             body: CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: [
-                SliverAppBar(
-                  title: ShaderMask(
-                    shaderCallback: (bounds) {
-                      return LinearGradient(
-                        colors: [
-                          HexColor('#2D963D'),
-                          HexColor('#FFE40F'),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ).createShader(Offset.zero & bounds.size);
-                    },
-                    child: const Text(
-                      "Jike Book During 2021",
-                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  centerTitle: false,
-                  backgroundColor: Colors.white,
-                  elevation: 8,
-                  pinned: true,
-                ),
+                BookAppBar(),
                 SliverList(
                   delegate: SliverChildBuilderDelegate(
                     (context, index) {
@@ -80,6 +70,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     childCount: books.length,
                   ),
                 ),
+                SliverFixedExtentList(
+                    delegate: SliverChildBuilderDelegate(
+                      (ctx, index) {
+                        return Container(
+                          alignment: Alignment.center,
+                          child: const Text(
+                            "- 2021 Jike Book -",
+                            style: TextStyle(
+                              color: Colors.grey,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        );
+                      },
+                      childCount: 1,
+                    ),
+                    itemExtent: 60),
               ],
             ),
           );
@@ -87,10 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _bookCell(Book book) {
     final image = 'images/${book.title}.jpg';
-    var rating = '${book.rating}';
-    if (rating.length == 1) {
-      rating = '$rating.0';
-    }
     var count = '${book.count}';
     if (count.length == 2) {
       count = '  $count';
@@ -129,14 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Icon(
-                    Icons.arrow_drop_up,
-                    size: 24,
-                  ),
-                  Text(
-                    count,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
-                  ),
+                  const Icon(Icons.arrow_drop_up, size: 24),
+                  Text(count, style: const TextStyle(fontWeight: FontWeight.bold)),
                   const SizedBox(width: 12),
                 ],
               )),
