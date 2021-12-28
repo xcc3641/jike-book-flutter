@@ -17,7 +17,7 @@ jobs:
           channel: 'stable'
       - run: flutter config --enable-web
       - run: flutter pub get
-      - run: flutter build web --release --base-href /jike-book-flutter/ --web-renderer html
+      - run: flutter build web --release --base-href /jike-book-flutter/ --web-renderer canvaskit
       - run: |
           cd build/web
           git init
